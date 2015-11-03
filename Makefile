@@ -1,4 +1,8 @@
 # libbpg Makefile
+
+# Platform variables.
+UNAME_S := $(shell uname -s)
+
 # 
 # Compile options:
 #
@@ -15,7 +19,9 @@ USE_BPGVIEW=y
 # Enable the cross compilation for Windows
 #CONFIG_WIN32=y
 # Enable for compilation on MacOS X
-#CONFIG_APPLE=y
+ifeq ($(UNAME_S),Darwin)
+  CONFIG_APPLE=y
+endif
 # Installation prefix
 prefix=/usr/local
 
