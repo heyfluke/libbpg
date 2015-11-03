@@ -1,0 +1,6 @@
+bpgdec
+*.o
+*.a
+*.d
+x265.out/
+
